@@ -22,7 +22,7 @@ export class ThingsFileRepo implements Repo<Thing> {
     // Future if (!validateInfo(info)) throw new Error('Not valid data');
     const initialData: string = await fs.readFile(file, { encoding: 'utf-8' });
     const data: Thing[] = JSON.parse(initialData);
-    info.id = String(Math.floor(Math.random() * 1000_000));
+    // info.id = String(Math.floor(Math.random() * 1000_000));
     const finalData = [...data, info];
     await fs.writeFile(file, JSON.stringify(finalData), 'utf-8');
     return info as Thing;
