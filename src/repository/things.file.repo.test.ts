@@ -65,10 +65,10 @@ describe('Given ThingsFileRepo', () => {
       expect(fs.readFile).toHaveBeenCalled();
     });
   });
-  describe('When I use delete method', () => {
-    test('Then it should delete the thing', async () => {
+  describe('When I call delete ', () => {
+    test('Then we expect undefined because the id doesnt ', async () => {
       (fs.readFile as jest.Mock).mockResolvedValue(
-        '[{ "id": "1", "name": "test", "week": 3, "level": 2 }]'
+        '[{ "id": "1", "name": "pera"}]'
       );
       const result = await repo.destroy('1');
       expect(fs.readFile).toHaveBeenCalled();
